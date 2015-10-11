@@ -1,4 +1,4 @@
-## Testowanie aplikacji w Ruby, matwb@ug.edu.pl
+## Testowanie aplikacji w Ruby, mwalczak@sigma.ug.edu.pl
 
 Podręczne linki:
 
@@ -15,5 +15,8 @@ Podręczne linki:
 ## Zadania
 
 1. [ ] [Learn X in Y minutes, where X = Ruby Array/Hash/Enumerable](ruby.md)
+  - [x] [Array](ruby.md#arrays)
+  - [ ] Hash
+  - [ ] Enumerable
 2. [ ] [Coś do przetestowania na początek](/)
 3. [ ] [Program/Biblioteka/Aplikacja WWW](/)
