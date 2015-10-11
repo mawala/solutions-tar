@@ -27,31 +27,33 @@ pomoc = 'zawsze'
 
 Tworzenie tablicy
 ```ruby
-ary = [1, "two", 3.0]
+ar = [1, "two", 3.0]
 Array.new # []
 Array.new(3, "a") # ["a","a","a"]
 Array.new(2) { Array.new(3, 1) } # [[1,1,1], [1,1,1]]
+
+%w[one two three] # ["one", "two", "three"]
 ```
 Dostęp do elementów
 ```ruby
-ary = [1,2,3,4,5]
+ar = [1,2,3,4,5]
 
-ary[0] # 1
-ary.at(0)
-ary.first
+ar[0] # 1
+ar.at(0)
+ar.first
 
-ary[-1] # 5
-ary.last
+ar[-1] # 5
+ar.last
 
-ary[1,2] # [2,3]
-ary[2..4] # [3,4,5]
-ary[1..-2] # [2,3,4]
+ar[1,2] # [2,3]
+ar[2..4] # [3,4,5]
+ar[1..-2] # [2,3,4]
 
-ary.take(3) # [1,2,3]
-ary.drop(2) # [3,4,5]
+ar.take(3) # [1,2,3]
+ar.drop(2) # [3,4,5]
 ```
 Informacje o tablicy
- ```ruby
+```ruby
 browsers = ['Chrome', 'Firefox','Safari','Opera','IE']
 
 browsers.length # 5
@@ -61,4 +63,71 @@ browsers.empty? # false
 browsers.include?('Konqueror') # false
 browsers.include?('IE') # true
 ```
+Dodawanie elementów
+```ruby
+ar = [1,2,3]
 
+ar.push(4) # [1, 2, 3, 4]
+ar << 5 # [1, 2, 3, 4, 5]
+
+# dodawanie na poczatku tablicy
+ar.unshift(0) # [0, 1, 2, 3, 4, 5]
+
+# dodawanie na podanym miejscu
+ar.insert(2, 1.5) # [0, 1, 1.5, 2, 3, 4, 5]
+ar.insert(4, 2.25,2.5,2.75) # [0, 1, 1.5, 2, 2.25, 2.5, 2.75, 3, 4, 5]
+```
+Usuwanie elementów
+```ruby
+ar = [1,2,3,4,5,2]
+
+# usuniecie elementu z podanego miejsca
+ar.delete_at(2)
+ar # [1, 2, 4, 5, 2]
+
+# usuniecie wszystkich elementow o podanej wartosci
+ar.delete(2)
+ar # [1, 4, 5]
+
+# pominiecie duplikatow
+ar = [1,2,3,4,5,5,5,2]
+ar.uniq # [1, 2, 3, 4, 5]
+ar # [1, 2, 3, 4, 5, 5, 5, 2]
+# z usuwaniem
+ar.uniq! # [1, 2, 3, 4, 5]
+ar # [1, 2, 3, 4, 5]
+```
+Iteracyjnie
+```ruby
+ar = [1,2,3]
+
+ar.each { |a| print 2*a, " "} # 2 4 6  => [1, 2, 3]
+
+ar2 = []
+ar.reverse_each { |a| ar2 << a }
+ar2 # [3, 2, 1]
+
+ar.map { |a| 3*a } # [3, 6, 9]
+```
+Wybór elementów
+```ruby
+ar = [1,2,3,4,5]
+
+# bez zmieniania tablicy
+ar.select { |a| a > 2 } # [3, 4, 5]
+ar.reject { |a| a%2==0} # [1, 3, 5]
+ar.drop_while { |a| a <=3 } # [4, 5]
+
+# ze zmienianiem tablicy
+ar.select! { |a| a > 2} 
+ar.reject! { |a| a > 4}
+ar # [3, 4]
+
+ar = [1,2,3,4,5,6]
+ar.delete_if { |a| a < 4 }
+ar # [4, 5, 6]
+
+ar = [1, 2, 3, 4, 5, 6]
+ar.keep_if { |a| a < 4 }
+ar # [1, 2, 3]
+```
