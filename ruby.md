@@ -157,3 +157,61 @@ a + b # ["a", "b", "c", "b", "c", "d"] (dodawanie)
 ```
 
 ### Hash
+Tworzenie hash
+```ruby
+Hash["a",1,"b",2,"c",3] # {"a"=>1, "b"=>2, "c"=>3}
+Hash[[["a",1],["b",2],["c",3]]] #  {"a"=>1, "b"=>2, "c"=>3}
+Hash["a"=>1,"b"=>2,"c"=>3] # {"a"=>1, "b"=>2, "c"=>3}
+```
+Wartość domyślna
+```ruby
+h = Hash.new # == h = {}
+h.default = "go"
+
+h = Hash.new("go")
+
+h["a"] = "ha"
+
+h["c"] # "go"
+h["c"].upcase! # "GO"
+# zmieniona wartosc domyslna
+h["d"] # "GO"
+
+h.keys # ["a"]
+
+# wartosc domyslna moze zalezec od klucza
+h = Hash.new { |hash,key| hash[key] = "+#{key}"}
+
+h["a"] = "ha"
+h.keys # ["a"]
+
+h["b"] # "+b"
+h.keys # ["a", "b"]
+```
+Każdy element
+```ruby
+h = {"Jack" => "Black", "Simon" => "White", "John" => "Smith"}
+h.each {|key,value| puts "#{key} #{value}" }
+# Jack Black
+# Simon White
+# John Smith
+
+h.each_key { |k| puts k }
+# Jack
+# Simon
+# John
+
+h.each_value { |v| puts v }
+# Black
+# White
+# Smith
+```
+Łączenie
+```ruby
+h = {"Jack" => "Black", "Simon" => "White", "John" => "Smith"}
+h1 = { "Jack" => "Small", "Sarah" => "Black"}
+h.merge(h1) # {"Jack"=>"Small", "Simon"=>"White", "John"=>"Smith", "Sarah"=>"Black"}
+
+h.merge!(h1)
+h # {"Jack"=>"Small", "Simon"=>"White", "John"=>"Smith", "Sarah"=>"Black"}
+```
