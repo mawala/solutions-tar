@@ -215,3 +215,39 @@ h.merge(h1) # {"Jack"=>"Small", "Simon"=>"White", "John"=>"Smith", "Sarah"=>"Bla
 h.merge!(h1)
 h # {"Jack"=>"Small", "Simon"=>"White", "John"=>"Smith", "Sarah"=>"Black"}
 ```
+### Enumerable
+
+Łączenie elementów
+```ruby
+[1,2,3,4,6,6,8,9,1].chunk { |a| a>=6 }.each {|bool,ary| p "#{bool}-> #{ary}"}
+# "false-> [1, 2, 3, 4]"
+# "true-> [6, 6, 8, 9]"
+# "false-> [1]"
+```
+Pętle
+```ruby
+(1..4).cycle(2) { |a| print a.to_s+", " } # 1, 2, 3, 4, 1, 2, 3, 4,
+```
+Różne podziały
+```ruby
+[1,2,1,3,1,5].each_cons(2) { |a| p a }
+#[1, 2]
+#[2, 1]
+#[1, 3]
+#[3, 1]
+#[1, 5]
+
+[1,2,1,3,1,5].each_slice(2) { |a| p a }
+#[1, 2]
+#[1, 3]
+#[1, 5]
+
+(0..10).group_by { |a| a%4 } # {0=>[0, 4, 8], 1=>[1, 5, 9], 2=>[2, 6, 10], 3=>[3, 7]}
+
+(0..10).partition { |a| a%4==0 } # [[0, 4, 8], [1, 2, 3, 5, 6, 7, 9, 10]]
+
+(5..9).slice_after(6).to_a # [[5, 6], [7, 8, 9]]
+
+(1..20).slice_when { |a,b| (a+b)%3==0 }.to_a
+# [[1], [2, 3, 4], [5, 6, 7], [8, 9, 10], [11, 12, 13], [14, 15, 16], [17, 18, 19], [20]]
+```
