@@ -14,9 +14,9 @@ Podręczne linki:
 
 ## Zadania
 
-1. [ ] [Learn X in Y minutes, where X = Ruby Array/Hash/Enumerable](ruby.md)
+1. [x] [Learn X in Y minutes, where X = Ruby Array/Hash/Enumerable](ruby.md)
   - [x] [Array](ruby.md#array)
   - [x] [Hash](ruby.md#hash)
   - [x] [Enumerable](ruby.md#enumerable)
-2. [ ] [Coś do przetestowania na początek](/)
+2. [x] [Coś do przetestowania na początek](zadanie2)
 3. [ ] [Program/Biblioteka/Aplikacja WWW](/)
