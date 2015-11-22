@@ -19,12 +19,12 @@ def find_binary(x, arr)
   while l <= r
     m = (l + r) / 2
     case compare(arr[m], x)
-	when -1
+    when -1
       l = m + 1
     when 1
       r = m - 1
-	when 0
-	  return m
+    when 0
+      return m
     end
   end
   'not found'
