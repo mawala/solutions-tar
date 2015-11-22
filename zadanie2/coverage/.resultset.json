@@ -1,0 +1,40 @@
+{
+  "RSpec": {
+    "coverage": {
+      "/home/studinf/mwalczak/apruby/solutions-tar/zadanie2/lib/find.rb": [
+        null,
+        null,
+        1,
+        21,
+        2,
+        null,
+        null,
+        1,
+        15,
+        11,
+        5,
+        null,
+        null,
+        1,
+        10,
+        6,
+        5,
+        5,
+        5,
+        10,
+        10,
+        null,
+        2,
+        null,
+        4,
+        null,
+        4,
+        null,
+        null,
+        1,
+        null
+      ]
+    },
+    "timestamp": 1448207517
+  }
+}
