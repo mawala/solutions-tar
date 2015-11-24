@@ -5,7 +5,6 @@ require_relative '../lib/find'
 require_relative '../lib/sort'
 
 array = [8, 5, 7, 2, 1, 3, 18]
-#array = (1..1000).map { 100*rand }
 
 print 'Weźmy tablicę: '
 p array
