@@ -18,8 +18,12 @@ RSpec.describe 'find.rb' do
     end
 
     context 'with correct arguments' do
+      context 'when the array is empty' do
+        it { expect(find(9, [])).to eq('not found') }
+      end
+
       context 'when the key is not in the array' do
-        it { expect(find(3, [])).to eq('not found') }
+        it { expect(find(-4, [1, 8, 2])).to eq('not found') }
       end
 
       it 'should return the correct index' do
@@ -57,8 +61,12 @@ RSpec.describe 'find.rb' do
         it { expect(find_binary(3, [3, 2.3, 5.1, -1])).to eq('not sorted') }
       end
 
+      context 'when the array is empty' do
+        it { expect(find_binary(18, [])).to eq('not found') }
+      end
+
       context 'when the key is not found' do
-        it { expect(find_binary(3, [])).to eq('not found') }
+        it { expect(find_binary(3, [2.3, 3.1, 4.2])).to eq('not found') }
       end
 
       context 'when the key is in the array' do
