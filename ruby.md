@@ -168,9 +168,9 @@ a + b # => ["a", "b", "c", "b", "c", "d"] (dodawanie)
 ### Hash
 Tworzenie hash
 ```ruby
-Hash['a',1,'b',2,'c',3] # {"a"=>1, "b"=>2, "c"=>3}
-Hash[[['a',1],['b',2],['c',3]]] #  {"a"=>1, "b"=>2, "c"=>3}
-Hash['a'=>1,'b'=>2,'c'=>3] # {"a"=>1, "b"=>2, "c"=>3}
+Hash['a', 1, 'b', 2, 'c', 3] # {"a"=>1, "b"=>2, "c"=>3}
+Hash[[['a', 1], ['b', 2], ['c', 3]]] #  {"a"=>1, "b"=>2, "c"=>3}
+Hash['a' => 1, 'b' => 2, 'c' => 3] # {"a"=>1, "b"=>2, "c"=>3}
 ```
 Wartość domyślna
 ```ruby
@@ -217,8 +217,8 @@ h.each_value { |v| puts v }
 ```
 Łączenie
 ```ruby
-h = {"Jack" => "Black", "Simon" => "White", "John" => "Smith"}
-h1 = { "Jack" => "Small", "Sarah" => "Black"}
+h = { 'Jack' => 'Black', 'Simon' => 'White', 'John' => 'Smith' }
+h1 = { 'Jack' => 'Small', 'Sarah' => 'Black' }
 h.merge(h1) # {"Jack"=>"Small", "Simon"=>"White", "John"=>"Smith", "Sarah"=>"Black"}
 
 h.merge!(h1)
