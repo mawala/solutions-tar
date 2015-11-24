@@ -1,5 +1,4 @@
-# in lib/find.rb
-
+#!/usr/bin/ruby -w
 def find(x, arr)
   arr.each_index { |i| return i if x == arr[i] }
   'not found'
@@ -8,7 +7,7 @@ end
 def compare(a, b)
   return -1 if a < b
   return 0 if a == b
-  return 1
+  1
 end
 
 def find_binary(x, arr)
