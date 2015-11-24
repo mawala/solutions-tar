@@ -18,5 +18,5 @@ Podręczne linki:
   - [x] [Array](ruby.md#array)
   - [x] [Hash](ruby.md#hash)
   - [x] [Enumerable](ruby.md#enumerable)
-2. [x] [Coś do przetestowania na początek](zadanie2)
+2. [x] [Coś do przetestowania na początek](zadanie2/README.md)
 3. [ ] [Program/Biblioteka/Aplikacja WWW](/)
